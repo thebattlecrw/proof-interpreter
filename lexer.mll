@@ -26,6 +26,9 @@ rule token = parse
     | "Not_Elim" 		{ NOT_ELIM }
     | "Exact" 			{ EXACT }
     | "Assume" 			{ ASSUME }
+    | "("               	{ LPAREN }
+    | ")"                 	{ RPAREN }
+    | "Qed"			{ QED }
     | _ as c { print_endline ("Unknown char: " ^ String.make 1 c); token lexbuf } 
     
  
