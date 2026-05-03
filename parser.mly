@@ -26,7 +26,7 @@
 main:
   | PROOF expr END    { set_goals $2 }
   | tactic END        { run_tactic $1 }
-  | expr EOF          { print_endline (string_of_formula $1) }
+  | expr END          { print_endline (string_of_formula $1) }
 
 tactic:
   | AND_INTRO         { And_Intro }

@@ -1,8 +1,20 @@
-let () =
+let rec repl lexbuf =
   try
-    let lexbuf = Lexing.from_channel stdin in
-    Parser.main Lexer.token lexbuf
+    print_string "> "; flush stdout;
+    Parser.main Lexer.token lexbuf;
+    repl lexbuf
   with
-  | Failure msg -> print_endline ("Error: " ^ msg)
-  | Parsing.Parse_error -> print_endline "Parse error"
+  | End_of_file ->
+      print_endline "\nBye."
+  | Failure msg ->
+      print_endline ("Error: " ^ msg);
+      repl lexbuf
+  | Parsing.Parse_error ->
+      print_endline "Parse error";
+      repl lexbuf
+;;
+
+let () =
+  let lexbuf = Lexing.from_channel stdin in
+  repl lexbuf
 ;;
