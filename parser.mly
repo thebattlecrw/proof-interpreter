@@ -40,7 +40,6 @@ main:
 command:
   | PROOF expr END      { set_goals $2 }
   | tactic END          { run_tactic $1; print_current_goal !goals }
-  | expr END            { print_endline (string_of_formula $1) }
   | QED END             { qed () }
   | EOF                 { raise End_of_file }
   
