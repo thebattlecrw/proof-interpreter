@@ -592,4 +592,8 @@ let g14 = run_proof (Exact ("H1")) g13 ;;
 print_current_goal g14 ;;
 
 
-(** 4. Analyse lexicale et syntaxique et boucle d’interaction *)
+(** 4. Analyse lexicale et syntaxique et boucle d’interaction
+
+    cf. README.md
+
+ *)
