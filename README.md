@@ -46,21 +46,33 @@ Ensuite, pour lancer le prouveur :
 ### Exemple de session 
 
 ```bash
-> Proof P ==> P.
+> Proof (P ==> Q) ==> (P ==> Q).
 
 ======================
-P ==> P
+(P ==> Q) ==> (P ==> Q)
 > Impl_Intro.
 
-H0 : P
+H0 : P ==> Q
 ======================
-P
-> Exact H0.
+P ==> Q
+> Impl_Intro.
+
+H1 : P
+H0 : P ==> Q
+======================
+Q
+> Impl_Elim H0 H1.
+
+H2 : Q
+H1 : P
+H0 : P ==> Q
+======================
+Q
+> Exact H2.
 All goals completed.
 > Qed.
 Proof completed successfully. Qed.
-> # CTRL+D
+> 
 Goodbye.
 
-# END
 ```
