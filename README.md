@@ -38,8 +38,8 @@ Ensuite, pour lancer le prouveur :
 
 ### Commandes utilisables 
 
-- **`Proof [formule].`** : Commancer la preuve d'une formule. Exemple : "Proof ((P \/ Q) ==> R) ==> (P ==> R) /\ (Q ==> R)."
-- **`[tactique] [H1] [H2].`** Appliquer une tactique sans argument, avec une hypothèse, ou bien avec deux hypothèses. Exemples : "Impl_Intro.", "Or_Elim H0", "Impl_Elim H1 H2", etc.
+- **`Proof [formule].`** : Commancer la preuve d'une formule. Exemple : `Proof ((P \/ Q) ==> R) ==> (P ==> R) /\ (Q ==> R).`
+- **`[tactique] [H1] [H2].`** Appliquer une tactique sans argument, avec une hypothèse, ou bien avec deux hypothèses. Exemples : `Impl_Intro.`, `Or_Elim H0`, `Impl_Elim H1 H2`, etc.
 - **`Qed.`** : Ne fonctionne pas comme Qed. dans des vrais prouveurs, mais vérifie s'il reste des buts dans la preuve.
 - **`CTRL+D`** : Terminer la session (EOF).
 
